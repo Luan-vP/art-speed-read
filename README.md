@@ -5,8 +5,9 @@ The goal is to create a RSVP-style art speedreader, scraping images from the Goo
 - Compile and view images - view_images.py
 - Command-line interface to permit custom search term 
 
-# Tech Stack
-- Python Backend
+# Usage
+- run scrape_images.py
+- then run read_images.py from same directory
 
 # Anticipated challenges:
 - loading times, this was challenging last time to show lead and show each image without an unusable delay
