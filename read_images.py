@@ -1,8 +1,6 @@
 import os, time
-from PIL import Image
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 
 images_dict = {}
 
@@ -10,8 +8,7 @@ images_dict = {}
 for file in os.listdir("./images"):
     if file.endswith(".webp"):
         print(file)
-        image = cv2.imread("./images/" + file, cv2.IMREAD_COLOR)
-        images_dict[file] = np.asarray(image)
+        images_dict[file] = cv2.imread("./images/" + file, cv2.IMREAD_COLOR)
 
 window_name = "Main View"
 view_window = cv2.namedWindow(window_name,cv2.WINDOW_NORMAL)

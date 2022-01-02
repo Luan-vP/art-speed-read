@@ -1,2 +1,4 @@
 selenium
 bs4
+numpy
+cv2
