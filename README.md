@@ -8,8 +8,3 @@ The goal is to create a RSVP-style art speedreader, scraping images from the Goo
 # Usage
 - run scrape_images.py
 - then run read_images.py from same directory
-
-# Anticipated challenges:
-- loading times, this was challenging last time to show lead and show each image without an unusable delay
--- Option: preload a compiled gif?
--- Other loading options?
