@@ -8,7 +8,8 @@ from urllib.parse import urljoin
 
 ##### Web scrapper for infinite scrolling page #####
 driver = webdriver.Chrome(executable_path=r"/usr/local/Caskroom/chromedriver/96.0.4664.45/chromedriver")
-driver.get("https://artsandculture.google.com/search/asset/?p=van-gogh-museum&em=m015xrq&categoryId=art-movement")
+driver.get("https://artsandculture.google.com/entity/surrealism/m073_6?categoryId=art-movement")
+# driver.get("https://artsandculture.google.com/search/asset/?p=van-gogh-museum&em=m015xrq&categoryId=art-movement")
 time.sleep(2)  # Allow 2 seconds for the web page to open
 scroll_pause_time = 1.5 # You can set your own pause time. My laptop is a bit slow so I use 1 sec
 screen_height = driver.execute_script("return window.screen.height;")   # get the screen height of the web
@@ -28,8 +29,8 @@ while True:
 ##### Extract Reddit URLs #####
 urls = []
 soup = BeautifulSoup(driver.page_source, "html.parser")
-for parent in soup.find_all(class_="os1Bab"):
-    a_tag = parent.find("a", class_="e0WtYb DRVwp bJyJVb PJLMUc")
+for a_tag in soup.findAll("a", class_="PJLMUc"):
+    # import pdb; pdb.set_trace()
     link = a_tag.attrs['style']
     # extract url from link
     url = link.split('"')[1]
